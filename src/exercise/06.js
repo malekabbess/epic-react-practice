@@ -44,7 +44,7 @@ function UsernameForm({onSubmitUsername}) {
         <input
           type="text"
           name="nameInput"
-          onChange={HandleChange}
+          onChange={handleChange}
           ref={userInputRef}
           value={username}
         />
