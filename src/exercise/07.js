@@ -1,7 +1,7 @@
 // Rendering Lists
 // http://localhost:3000/isolated/exercise/07.js
 
-import * as React from 'react'
+import React, {useState} from 'react'
 
 const allItems = [
   {id: 'apple', value: '🍎 apple'},
@@ -11,7 +11,7 @@ const allItems = [
 ]
 
 function App() {
-  const [items, setItems] = React.useState(allItems)
+  const [items, setItems] = useState(allItems)
 
   function addItem() {
     const itemIds = items.map(i => i.id)
@@ -29,8 +29,9 @@ function App() {
       </button>
       <ul>
         {items.map(item => (
-          // 🐨 add a key prop to the <li> below. Set it to item.id
-          <li>
+          <li key={item.id}>
+          {/* // 🐨 add a key prop to the <li> below. Set it to item.id */}
+          
             <button onClick={() => removeItem(item)}>remove</button>{' '}
             <label htmlFor={`${item.id}-input`}>{item.value}</label>{' '}
             <input id={`${item.id}-input`} defaultValue={item.value} />
